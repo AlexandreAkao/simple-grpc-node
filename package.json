@@ -1,0 +1,26 @@
+{
+  "name": "grpc-streaming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/serverMali.js",
+    "seed": "node src/seeds/mongoSeed.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.6.7",
+    "@grpc/proto-loader": "^0.6.13",
+    "dotenv": "^16.0.1",
+    "mali": "^0.46.1",
+    "minimist": "^1.2.6",
+    "mongoose": "^6.3.6"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.2.0",
+    "nodemon": "^2.0.16"
+  }
+}

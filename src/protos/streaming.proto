@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+// package streaming;
+
+service Streaming {
+  rpc GetAllUsers (Empty) returns (UserList) {}
+  rpc GetAllMusics (Empty) returns (MusicList) {}
+  rpc GetAllPlaylistsByUser (UserRequestId) returns (PlaylistList) {}
+  rpc GetAllMusicsByPlaylist (PlaylistRequestId) returns (MusicList) {}
+  rpc GetAllPlaylistsByMusic (MusicRequestId) returns (PlaylistList) {}
+}
+
+message Empty {}
+
+message User {
+  string id = 1;
+  string name = 2;
+  int32 age = 3;
+}
+
+message UserList {
+  repeated User users = 1;
+}
+
+message Playlist {
+  string id = 1;
+  string name = 2;
+}
+
+message PlaylistList {
+  repeated Playlist playlists = 1;
+}
+
+message Music {
+  string id = 1;
+  string name = 2;
+  string artist = 3;
+}
+
+message MusicList {
+  repeated Music musics = 1;
+}
+
+message UserRequestId {
+  string id = 1;
+}
+
+message PlaylistRequestId {
+  string id = 1;
+}
+
+message MusicRequestId {
+  string id = 1;
+}
