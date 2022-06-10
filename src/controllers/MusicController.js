@@ -5,6 +5,13 @@ const MusicController = {
     const musics = await Music.find();
 
     ctx.res = { musics }
+  },
+
+  GetAllMusicsByPlaylist: async (ctx) => {
+    const { id } = ctx.req;
+    const musics = await Music.find({ playlistIds: { $in: id }});
+
+    ctx.res = { musics }
   }
 }
 

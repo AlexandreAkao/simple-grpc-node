@@ -61,6 +61,7 @@ const createPlaylist = async (quantity = 100) => {
 }
 
 const bindMusicToPlaylist = async () => {
+  console.log('starting binding...')
   const musics = await Music.find();
   const playlists = await Playlist.find();
   
@@ -86,6 +87,7 @@ const bindMusicToPlaylist = async () => {
 
     await Music.findByIdAndUpdate(musics[i]._id, { playlistIds });
   }
+  console.log('finished binding...')
 }
 
 const run = async () => {
@@ -115,6 +117,6 @@ mongoose.connection.on('connected', async () => {
   await clear();
   await run();
   await bindMusicToPlaylist();
-  process.exit(1);
+  process.exit(0);
 });
 

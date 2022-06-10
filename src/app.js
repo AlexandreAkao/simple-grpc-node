@@ -2,8 +2,9 @@ const Mali = require('mali');
 const path = require('path');
 const mongoose = require('mongoose');
 
-const userController = require('./controllers/UserController')
-const musicController = require('./controllers/MusicController')
+const userController = require('./controllers/UserController');
+const musicController = require('./controllers/MusicController');
+const playlistController = require('./controllers/PlaylistController');
 
 class App {
   constructor() {
@@ -25,6 +26,7 @@ class App {
   routes() {
     this.server.use(userController);
     this.server.use(musicController);
+    this.server.use(playlistController);
   }
 }
 
