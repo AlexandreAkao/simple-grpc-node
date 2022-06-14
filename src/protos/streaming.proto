@@ -1,7 +1,5 @@
 syntax = "proto3";
 
-// package streaming;
-
 service Streaming {
   rpc GetAllUsers (Empty) returns (UserList) {}
   rpc GetAllMusics (Empty) returns (MusicList) {}
@@ -11,8 +9,6 @@ service Streaming {
 }
 
 message Empty {}
-
-message Timestamp {}
 
 message User {
   string id = 1;
